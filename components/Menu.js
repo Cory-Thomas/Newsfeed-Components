@@ -6,7 +6,8 @@ let menuItems = [
   "What's New",
   'Tech Trends',
   'Music',
-  'Log Out'
+  'Log Out',
+  'Really Log Out'
 ];
 
 /* 
@@ -35,27 +36,14 @@ let menuItems = [
 function menuMaker(menuArray){
   const menu = document.createElement('div')
   const menuList = document.createElement('ul')
-  const menuItem1 = document.createElement('li')
-  const menuItem2 = document.createElement('li')
-  const menuItem3 = document.createElement('li')
-  const menuItem4 = document.createElement('li')
-  const menuItem5 = document.createElement('li')
-  const menuItem6 = document.createElement('li')
 
   menu.appendChild(menuList)
-  menu.appendChild(menuItem1)
-  menu.appendChild(menuItem2)
-  menu.appendChild(menuItem3)
-  menu.appendChild(menuItem4)
-  menu.appendChild(menuItem5)
-  menu.appendChild(menuItem6)
 
-  menuItem1.textContent = menuArray[0]
-  menuItem2.textContent = menuArray[1]
-  menuItem3.textContent = menuArray[2]
-  menuItem4.textContent = menuArray[3]
-  menuItem5.textContent = menuArray[4]
-  menuItem6.textContent = menuArray[5]
+  menuArray.forEach( item => {
+    const menuItem = document.createElement('li')
+    menu.appendChild(menuItem)
+    menuItem.textContent = item
+  })
 
   menu.classList.add('menu')
 
